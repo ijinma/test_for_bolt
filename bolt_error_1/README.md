@@ -19,7 +19,9 @@ GCC version 9.3.0 (GCC)
 ### run perf and bolt:
 ```
 # perf record -F 3999 -e cycles:u -o perf.data ./test
+```
 
+```
 # perf2bolt -p perf.data -o perf.fdata test -nl
 PERF2BOLT: Starting data aggregation job for perf.data
 PERF2BOLT: spawning perf job to read events without LBR
@@ -46,6 +48,9 @@ PERF2BOLT: processing basic events (without LBR)...
 PERF2BOLT: read 301440 samples
 PERF2BOLT: out of range samples recorded in unknown regions: 6 (0.0%)
 PERF2BOLT: wrote 84 objects and 0 memory objects to perf.fdata
+```
+
+```
 # llvm-bolt test -o test.bolt -data=perf.fdata -reorder-blocks=cache+ -reorder-functions=hfsort+ -split-functions=3 -split-all-cold -split-eh -dyno-stats -v=3
 BOLT-INFO: Target architecture: aarch64
 BOLT-INFO: BOLT version: bfa0ca9934fda54949958c8e1bc330d0d95c31d8

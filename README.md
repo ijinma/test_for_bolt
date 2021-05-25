@@ -2,7 +2,7 @@
 
 ## bolt_error_1:
 ```
-# gcc -Wl,-q -fuse-ld=gold bolt_error_1/test_2.c -o test
+# gcc -Wl,-q -fuse-ld=gold bolt_error_1/test_1.c -o test
 ```
 ```
 # perf record -F 3999 -e cycles:u -o perf.data ./test

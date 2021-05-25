@@ -13,7 +13,7 @@ Thread model: POSIX
 GCC version 9.3.0 (GCC)
 ```
 ```
-# gcc -Wl,-q -fuse-ld=gold -O2 test.c -o test
+# gcc -Wl,-q -fuse-ld=gold -O2 test_2.c -o test
 ```
 
 ### run perf and bolt:
